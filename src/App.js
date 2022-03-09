@@ -1,24 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import Parent from "./Parent"
+import React, {useState} from "react";
+import Contextfromcontextfile from './context';
+
 
 function App() {
+
+                    // valapp is the array that is created by the useState hook
+  let valApp = useState(10);
+// now passing useState hook to the context file by using .proivider syntax in form of value 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+    <Contextfromcontextfile.Provider value = {valApp}>
+      <div className="App">
+        hellow world
+        <Parent></Parent>
+      </div>
+    </Contextfromcontextfile.Provider>
   );
 }
 
